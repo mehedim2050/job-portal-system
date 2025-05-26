@@ -15,7 +15,6 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log('User created:', result.user);
-                // You can add redirection or toast here
             })
             .catch(error => {
                 console.error('Error creating user:', error);

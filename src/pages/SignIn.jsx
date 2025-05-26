@@ -1,11 +1,11 @@
 import React from 'react';
 import { useContext } from 'react';
 import { AuthContext } from '../context/AuthContext/AuthContext';
-import Lottie from 'lottie-react'; // <-- Add this line
+import Lottie from 'lottie-react'; 
 import signInLottie from '../assets/Animation - 1748189300814.json'
 
 const SignIn = () => {
-    const { createUser } = useContext(AuthContext); // fixed useContext usage
+    const { signInUser } = useContext(AuthContext); 
 
     const handleSignIn = e => {
         e.preventDefault();
@@ -13,13 +13,14 @@ const SignIn = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        createUser(email, password)
+       signInUser(email, password)
             .then(result => {
                 console.log('User created:', result.user);
             })
             .catch(error => {
                 console.error('Error creating user:', error);
             });
+
     }
 
     return (
@@ -30,7 +31,7 @@ const SignIn = () => {
                 </div>
                 <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
                     <div className="card-body">
-                        <h1 className="text-5xl font-bold">Register now!</h1>
+                        <h1 className="text-5xl font-bold">Sign In now!</h1>
                         <form onSubmit={handleSignIn}>
                             <fieldset className="fieldset">
                                 <label className="label">Email</label>
@@ -38,7 +39,7 @@ const SignIn = () => {
                                 <label className="label">Password</label>
                                 <input type="password" name='password' className="input" placeholder="Password" />
                                 <div><a className="link link-hover">Forgot password?</a></div>
-                                <button className="btn btn-neutral mt-4">Register</button>
+                                <button className="btn btn-neutral mt-4">Sign In</button>
                             </fieldset>
                         </form>
                     </div>
