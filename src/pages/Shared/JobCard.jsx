@@ -4,7 +4,7 @@ import { Link } from 'react-router';
 
 const JobCard = ({ job }) => {
 
-    const { title, location, jobType, category, description, company_logo, company, requirements, salaryRange, _id } = job;
+    const { title, location, description, company_logo, company, requirements, salaryRange, _id } = job;
     return (
         <div className="card bg-base-100 w-96 shadow-sm">
             <div className='flex gap-2'>
@@ -32,7 +32,7 @@ const JobCard = ({ job }) => {
                     }
                 </div>
                 <div className='card-actions justify-end'>
-                    <Link to={`/job/${_id}`}><button className='btn btn-primary'>Apply Now</button></Link>
+                    <Link to={`/job/${_id}`}><button className='btn btn-primary'>Show Details</button></Link>
                 </div>
             </div>
         </div>
