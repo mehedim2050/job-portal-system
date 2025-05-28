@@ -4,8 +4,9 @@ import ApplicationList from './ApplicationList';
 import useAuth from '../../hooks/useAuth';
 
 
-const myApplicationsPromise =email =>{
-    return fetch(`http://localhost:3000/job/application?email=${email}`).then(res => res.json())
+const myApplicationsPromise = email =>{
+    return fetch(`http://localhost:3000/job/application?email=${email}`)
+    .then(res => res.json())
 }
 const MyApplications = () => {
     const  {user} = useAuth();

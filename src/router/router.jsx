@@ -1,51 +1,4 @@
-// import {
-//   createBrowserRouter,
-// } from "react-router"; 
-// import RootLayout from "../layouts/RootLayout";
-// import Home from "../pages/Home/Home";
-// import Register from "../pages/Register/Register";
-// import SignIn from "../pages/SignIn";
-// import JobDetails from "../pages/JobDetails/JobDetails";
-// import PrivateRoutes from "../routes/PrivateRoutes";
-// import JobApply from "../pages/JobApply/JobApply";
 
-// const router = createBrowserRouter([
-//   {
-//     path: "/",
-//     Component: RootLayout,
-//     children: [
-//       {
-//         index: true,
-//         Component: Home
-//       },
-//       {
-//         path: "job/:id",
-//         Component: JobDetails,
-//         loader: ({ params }) => fetch(`http://localhost:3000/job/${params.id}`)
-//       },
-//       {
-//         path: "jobApply/:id",
-//         Component: PrivateRoutes,
-//         children: [
-//           {
-//             index: true,
-//             Component: JobApply
-//           }
-//         ]
-//       },
-//       {
-//         path: "/register",
-//         Component: Register
-//       },
-//       {
-//         path: "/signIn",
-//         Component: SignIn
-//       }
-//     ]
-//   },
-// ]);
-
-// export default router;
 import {
   createBrowserRouter,
 } from 'react-router';
@@ -58,6 +11,7 @@ import JobDetails from "../pages/JobDetails/JobDetails";
 import PrivateRoutes from "../routes/PrivateRoutes";
 import JobApply from "../pages/JobApply/JobApply";
 import MyApplications from '../pages/MyApplications/MyApplications';
+import AddJobs from '../pages/AddJobs/AddJobs';
 
 const router = createBrowserRouter([
   {
@@ -86,6 +40,14 @@ const router = createBrowserRouter([
         element: (
           <PrivateRoutes>
             <MyApplications />
+          </PrivateRoutes>
+        )
+      },
+      {
+        path: "addJob",
+        element: (
+          <PrivateRoutes>
+            <AddJobs />
           </PrivateRoutes>
         )
       },
