@@ -4,7 +4,7 @@ import HotJobs from './HotJobs';
 
 const Home = () => {
 
-  const jobPromise=fetch('http://localhost:3000/job').then(res=> res.json())
+  const jobPromise=fetch('http://localhost:3000/job').then(res=> res.json());
     return (
         <div>
           <Banner></Banner> 
